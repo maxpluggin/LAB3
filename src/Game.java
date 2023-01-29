@@ -11,10 +11,10 @@ public class Game {
         Player player2;
         Scanner scan = new Scanner(System.in);
         while (true) {
-            System.out.print("Enter name of 1st player: ");
+            System.out.print("Type name of 1st player: ");
             String player1Name = scan.nextLine();
             if (myDatabase.isUserExists(player1Name)) {
-                System.out.print("Enter password of 1st player: ");
+                System.out.print("Type password of 1st player: ");
                 String player1Pass = scan.nextLine();
                 if (myDatabase.isUserPasswordExists(player1Name, player1Pass)) {
                     player1 = new Player(player1Name);
@@ -23,10 +23,10 @@ public class Game {
             }
         }
         while (true) {
-            System.out.print("Enter name of 2st player: ");
+            System.out.print("Type name of 2nd player: ");
             String player2Name = scan.nextLine();
             if (myDatabase.isUserExists(player2Name) && !Objects.equals(player2Name, player1.getName())) {
-                System.out.print("Enter password of 2st player: ");
+                System.out.print("Type password of 2nd player: ");
                 String player2Pass = scan.nextLine();
                 if (myDatabase.isUserPasswordExists(player2Name, player2Pass)) {
                     player2 = new Player(player2Name);
